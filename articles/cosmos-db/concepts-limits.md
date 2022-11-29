@@ -54,7 +54,7 @@ The actual minimum RU/s may vary depending on your account configuration. You ca
 To estimate the minimum throughput required of a container with manual throughput, find the maximum of:
 
 * 400 RU/s 
-* Current storage in GB * 10 RU/s
+* Current storage in GB * 100 RU/s
 * Highest RU/s ever provisioned on the container / 100
 
 For example, you have a container provisioned with 400 RU/s and 0-GB storage. You increase the throughput to 50,000 RU/s and import 20 GB of data. The minimum RU/s is now `MAX(400, 20 * 10 RU/s per GB, 50,000 RU/s / 100)` = 500 RU/s. Over time, the storage grows to 200 GB. The minimum RU/s is now `MAX(400, 200 * 10 RU/s per GB, 50,000 / 100)` = 2000 RU/s. 
